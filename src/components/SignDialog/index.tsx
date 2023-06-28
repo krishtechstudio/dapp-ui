@@ -152,7 +152,7 @@ export default class SignDialog extends React.Component <IProps> {
                     </div>
                     <div>
                         <Button css={css`width: 100%`} onClick={this.handleSignWithExchangeSeed} >
-                            Sign in with Exchange(Seed)</Button>
+                            Sign in with Seed</Button>
                         <Description><br/>The network will be MainNet by default</Description>
                     </div>
                     <div>

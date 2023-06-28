@@ -3,7 +3,7 @@ import React from "react";
 import {css, jsx} from '@emotion/core'
 import Account from "@components/Home/Account";
 import styled from "@emotion/styled";
-import logo from '@src/assets/icons/logo.svg'
+import logo from '@src/assets/icons/logo.png'
 import {fonts} from "@src/styles";
 import Input from "@components/Input";
 import {inject, observer} from "mobx-react";

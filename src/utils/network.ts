@@ -6,7 +6,7 @@ export interface INetwork {
 }
 
 export enum ENetworkByte {
-    MAINNET = 87,   // W
+    MAINNET = 78,   // W
     STAGENET = 83,  // S
     TESTNET = 84,   // T
     DEVNET = 68,    // D
@@ -26,8 +26,8 @@ export const networks = {
         clientOrigin: 'https://stagenet.waves.exchange/signer/'
     },
     'mainnet': {
-        server: 'https://nodes.wavesnodes.com',
-        code: 'W',
+        server: 'https://nodes.krossexplorer.com',
+        code: 'N',
         clientOrigin: 'https://waves.exchange/signer/'
     },
     'devnet': {server: 'https://devnet1-htz-nbg1-1.wavesnodes.com', code: 'D'},

@@ -26,7 +26,7 @@ export const getNetwork = (url: string) => {
     switch (url) {
         case 'T':
             return 'TestNet';
-        case 'W':
+        case 'N':
             return 'MainNet';
         case 'S':
             return 'StageNet';

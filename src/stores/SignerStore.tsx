@@ -2,7 +2,7 @@ import {action, observable} from 'mobx';
 import {RootStore} from '@stores';
 import {SubStore} from './SubStore';
 import {Signer} from '@waves/signer';
-import {ProviderWeb} from "@waves.exchange/provider-web";
+import ProviderWeb from "@utils/providerWeb.js";
 import {ProviderCloud} from "@waves.exchange/provider-cloud";
 import ProviderMetamask, {isMetaMaskInstalled} from "@waves/provider-metamask";
 import {getExplorerLink, networks, Network, INetwork} from '@utils';
@@ -26,16 +26,8 @@ class SignerStore extends SubStore {
     initSignerWeb = async () => {
         const network = this.getNetworkByDapp();
 
-        if (network.clientOrigin) {
-            this.signer = new Signer({NODE_URL: network.server});
-            await this.signer.setProvider(new ProviderWeb(network.clientOrigin));
-        } else {
-            this.signer = undefined;
-            this.rootStore.notificationStore.notify(
-                `Unfortunately, Exchange does not support a ${network.server} network at this time. Sign in with Keeper.`,
-                {type: 'error'}
-            )
-        }
+        this.signer = new Signer({NODE_URL: network.server});
+        await this.signer.setProvider(new ProviderWeb());
     }
 
     initSignerCloud = async () => {
